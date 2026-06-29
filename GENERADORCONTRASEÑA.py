@@ -23,38 +23,39 @@ def solicitar_longitud():  # Función para pedir la longitud de la contraseña
 
 def generar_contrasena(longitud):  # FUNCION PARA GENERAR LA CONTRASEÑA
     caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:,;#*"  #INGRESAMOS LOS CARACTERES LOS MISMO QUE SERVIRAN PARA CREAR LA CONTRASEÑA
-    contrasena = ""
+    contrasena = "" #CREAMOS LA VARIABLE VACIA PARA GUARDAR LA CONTRASEÑA
 
     for i in range(longitud):  #CREAMOS EL BUCLE PARA QUE ELIJA ALEATORIAMENTE LOS CARACTERES
         contrasena = contrasena + random.choice(caracteres) 
-# ------------------ PROGRAMA PRINCIPAL ------------------
+        
+#------------------ PROGRAMA PRINCIPAL ------------------
 
-opcion = 0  # INICIALIZAMOS LA VARIABLE OPCIÓN
+opcion = 0  #CREAMOS LA VARIABLE OPCIÓN
 
-# EL MENÚ SE REPETIRÁ HASTA QUE EL USUARIO ELIJA SALIR
+#EL MENÚ SE REPETIRÁ HASTA QUE EL USUARIO ELIJA SALIR
 while opcion != 2:
 
-    mostrar_menu()  # LLAMAMOS A LA FUNCIÓN QUE MUESTRA EL MENÚ
+    mostrar_menu()  #LLAMAMOS A LA FUNCIÓN QUE MUESTRA EL MENÚ
 
-    # SOLICITAMOS LA OPCIÓN AL USUARIO
+    #SOLICITAMOS LA OPCIÓN AL USUARIO
     opcion = int(input("Seleccione una opción: "))
 
-    # SI EL USUARIO ELIGE GENERAR UNA CONTRASEÑA
+    #SI EL USUARIO ELIGE GENERAR UNA CONTRASEÑA
     if opcion == 1:
 
-        longitud = solicitar_longitud()  # PEDIMOS LA LONGITUD
+        longitud = solicitar_longitud()  #PEDIMOS LA LONGITUD
 
-        contrasena = generar_contrasena(longitud)  # GENERAMOS LA CONTRASEÑA
+        contrasena = generar_contrasena(longitud)  #GENERAMOS LA CONTRASEÑA
 
-        # MOSTRAMOS LA CONTRASEÑA GENERADA
+        #MOSTRAMOS LA CONTRASEÑA GENERADA
         print("\nLa contraseña generada es:", contrasena)
 
-    # SI EL USUARIO ELIGE SALIR
+    #SI EL USUARIO ELIGE SALIR
     elif opcion == 2:
 
         print("\nGracias por utilizar el Generador de Contraseñas.")
 
-    # SI EL USUARIO INGRESA UNA OPCIÓN INCORRECTA
+    #SI EL USUARIO INGRESA UNA OPCIÓN INCORRECTA
     else:
 
         print("\nError: Opción no válida. Intente nuevamente.")
